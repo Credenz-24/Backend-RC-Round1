@@ -1,10 +1,11 @@
 from django.db import models
 
 class Question(models.Model):
-    question_id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
+    question_id = models.IntegerField(unique=True)
     question_text = models.TextField()
     correct_answer = models.IntegerField()
-    responses = models.CharField(max_length= 255 , null = True )
+    responses = models.CharField(max_length=255, null=True)
 
 class Team(models.Model):
     CATEGORY_CHOICES = [("JR", 'Junior'),("SR", 'Senior'),]  
