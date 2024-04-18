@@ -1,5 +1,7 @@
 FROM python:3
 WORKDIR /user/src/app
+RUN apt-get update
+
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 RUN pip install --upgrade pip
