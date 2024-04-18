@@ -66,7 +66,7 @@ class GetQuestionView(generics.ListCreateAPIView):
 
             progress.question_list = q_list
             progress.start_time = timezone.now()
-            progress.end_time = timezone.now() + timezone.timedelta(hours=2)
+            progress.end_time = timezone.now() + timezone.timedelta(minutes=30)
             progress.save()
 
         if progress.current_question > 10:
