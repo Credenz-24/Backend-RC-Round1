@@ -136,11 +136,15 @@ STATIC_ROOT = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CORS_ALLOWED_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    'https://dev--rc24.netlify.app', 
-    'https://api.rc.credenz.in', 
-    'https://rc.credenz.in', 
+CORS_ORIGIN_WHITELIST = [
+    'https://rc.credenz.in',
+    'https://api.rc.credenz.in',
+    'http://localhost:5173',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://rc.credenz.in',
+    'https://api.rc.credenz.in',
+    'http://localhost:5173',
 ]
 
 
