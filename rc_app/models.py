@@ -8,12 +8,14 @@ class Question(models.Model):
     responses = models.CharField(max_length=255, null=True)
 
 class Team(models.Model):
-    CATEGORY_CHOICES = [("JR", 'Junior'),("SR", 'Senior'),]  
+    CATEGORY_CHOICES = [("JR", 'Junior'),("SR", 'Senior'),]
+    user1 = models.CharField(max_length=255)
+    user2 = models.CharField(max_length=255,blank=True,null=True)
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
     teamname = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=128)
     login_status = models.BooleanField(default=False)
-
+    
     def __str__(self):
         return self.teamname
 
